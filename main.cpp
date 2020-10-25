@@ -4,9 +4,35 @@ using namespace std;
 void reverseArray();
 void max_min_elementOfArray();
 void kthSmallestElement();
+void sort_0_1_2();
 int main() {
-    kthSmallestElement();
+    sort_0_1_2();
     return 0;
+}
+void sort_0_1_2(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int a[n];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        for(int j=0;j<n;j++){
+            for(int i=j+1;i<n;i++){
+                if(a[j]>a[i]){
+                    int temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp;
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+    }
 }
 void kthSmallestElement(){
     int n;
