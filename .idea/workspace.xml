@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="450_DSA_Problems" targetName="450_DSA_Problems" />
@@ -7,13 +25,15 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="1,2,3 SOLVED.">
+    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="4 SOLVED.">
+      <change afterPath="$PROJECT_DIR$/array.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +59,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Competitive Programming" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="450_DSA_Problems" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="450_DSA_Problems" TARGET_NAME="450_DSA_Problems" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="450_DSA_Problems" RUN_TARGET_NAME="450_DSA_Problems">
+    <configuration name="450_DSA_Problems" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="450_DSA_Problems" TARGET_NAME="450_DSA_Problems" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="450_DSA_Problems" RUN_TARGET_NAME="450_DSA_Problems">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -65,7 +90,17 @@
       <workItem from="1603447181847" duration="2312000" />
       <workItem from="1603457187201" duration="2509000" />
       <workItem from="1603618052709" duration="636000" />
-      <workItem from="1603633437793" duration="1104000" />
+      <workItem from="1603633437793" duration="1837000" />
+      <workItem from="1603909752482" duration="1634000" />
+      <workItem from="1603956538332" duration="4574000" />
+      <workItem from="1604055238179" duration="3169000" />
+      <workItem from="1604081459586" duration="2627000" />
+      <workItem from="1604088074184" duration="4000" />
+      <workItem from="1604129104301" duration="374000" />
+      <workItem from="1615054151731" duration="929000" />
+      <workItem from="1615296554351" duration="8855000" />
+      <workItem from="1615318116748" duration="2404000" />
+      <workItem from="1615349170243" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="1,2,3 SOLVED.">
       <created>1603449463093</created>
@@ -81,48 +116,34 @@
       <option name="project" value="LOCAL" />
       <updated>1603449479694</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4 SOLVED.">
+      <created>1603635150433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603635150433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1,2,3 SOLVED." />
-    <option name="LAST_COMMIT_MESSAGE" value="1,2,3 SOLVED." />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="930" y="315" key="Github.ShareDialog" timestamp="1603447211428">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="930" y="315" key="Github.ShareDialog/0.0.1536.834@0.0.1536.834" timestamp="1603447211428" />
-    <state x="929" y="124" key="Github.UntrackedFilesDialog" timestamp="1603447238060">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="929" y="124" key="Github.UntrackedFilesDialog/0.0.1536.834@0.0.1536.834" timestamp="1603447238060" />
-    <state width="1493" height="161" key="GridCell.Tab.0.bottom" timestamp="1603634627645">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1603634627645" />
-    <state width="1493" height="161" key="GridCell.Tab.0.center" timestamp="1603634627645">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1603634627645" />
-    <state width="1493" height="161" key="GridCell.Tab.0.left" timestamp="1603634627645">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1603634627645" />
-    <state width="1493" height="161" key="GridCell.Tab.0.right" timestamp="1603634627645">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state width="1493" height="161" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1603634627645" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1603449493393">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1603449493393" />
-    <state x="629" y="275" key="refactoring.ChangeSignatureDialog" timestamp="1603457347929">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="629" y="275" key="refactoring.ChangeSignatureDialog/0.0.1536.834@0.0.1536.834" timestamp="1603457347929" />
+    <MESSAGE value="4 SOLVED." />
+    <option name="LAST_COMMIT_MESSAGE" value="4 SOLVED." />
   </component>
 </project>
