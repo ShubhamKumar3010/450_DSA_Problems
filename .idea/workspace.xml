@@ -29,12 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="4 SOLVED.">
-      <change afterPath="$PROJECT_DIR$/array.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
-    </list>
+    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="main.cpp renamed array.cp&#10;question added." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +95,7 @@
       <workItem from="1615054151731" duration="929000" />
       <workItem from="1615296554351" duration="8855000" />
       <workItem from="1615318116748" duration="2404000" />
-      <workItem from="1615349170243" duration="1080000" />
+      <workItem from="1615349170243" duration="1430000" />
     </task>
     <task id="LOCAL-00001" summary="1,2,3 SOLVED.">
       <created>1603449463093</created>
@@ -123,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603635150433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="main.cpp renamed array.cp&#10;question added.">
+      <created>1615357764262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615357764262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +146,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1,2,3 SOLVED." />
     <MESSAGE value="4 SOLVED." />
-    <option name="LAST_COMMIT_MESSAGE" value="4 SOLVED." />
+    <MESSAGE value="main.cpp renamed array.cp&#10;question added." />
+    <option name="LAST_COMMIT_MESSAGE" value="main.cpp renamed array.cp&#10;question added." />
   </component>
 </project>
