@@ -29,7 +29,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="main.cpp renamed array.cp&#10;question added." />
+    <list default="true" id="a4936b9d-4767-4821-ab2f-2ec4fb29d3cb" name="Default Changelist" comment="main.cpp renamed array.cp&#10;question added.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/array.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/array.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,16 +66,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -95,7 +88,17 @@
       <workItem from="1615054151731" duration="929000" />
       <workItem from="1615296554351" duration="8855000" />
       <workItem from="1615318116748" duration="2404000" />
-      <workItem from="1615349170243" duration="1430000" />
+      <workItem from="1615349170243" duration="2079000" />
+      <workItem from="1615452677834" duration="614000" />
+      <workItem from="1615456043645" duration="98000" />
+      <workItem from="1615527557348" duration="4425000" />
+      <workItem from="1615565506970" duration="2260000" />
+      <workItem from="1615617024354" duration="7076000" />
+      <workItem from="1615644631900" duration="2467000" />
+      <workItem from="1615710184360" duration="4991000" />
+      <workItem from="1616086683589" duration="3386000" />
+      <workItem from="1616129797109" duration="595000" />
+      <workItem from="1616297818437" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="1,2,3 SOLVED.">
       <created>1603449463093</created>
@@ -125,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615357764262</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="main.cpp renamed array.cp&#10;question added.">
+      <created>1615357816679</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615357816679</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
