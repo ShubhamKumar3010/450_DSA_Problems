@@ -51,14 +51,92 @@ int getPairsCount(int arr[], int n, int k);
 
 vector<int> commonElements(int A[], int B[], int C[], int n1, int n2, int n3);
 
+void rearrangeArray(int a[], int n);
+
 bool subArrayExists(int a[], int n);
+
+long long maxProduct(int *arr, int n);
+
+int findLongestConseqSubseq(int arr[], int N);
+
+int moreThanNdK(int a[], int n, int k);
+
+string isSubset(int a1[], int a2[], int n, int m);
 
 int main()
 {
-    int v[5] = {4, 2, -3, 1, 6};
-    cout << subArrayExists(v, 5);
+    int a1[] = {11, 1, 13, 21, 3, 7},
+        a2[] = {11, 3, 7, 1};
+    cout << isSubset(a1, a2,6,4);
     return 0;
 }
+string isSubset(int a1[], int a2[], int n, int m) {
+    set<int> s;
+    for(int i=0;i<n;i++){s.insert(a1[i]);}
+    int size = s.size();
+    for(int i=0;i<m;i++){s.insert(a2[i]);}
+    return s.size()==size ?  "Yes" :  "No" ;
+}
+int moreThanNdK(int a[], int n, int k)
+{
+    map<int, int> m;
+    for (int i = 0; i < n; i++)
+    {
+        m[a[i]]++;
+    }
+    vector<int> v;
+    for (auto i : m)
+    {
+        if (i.second > (n / k))
+        {
+            cout << i.first << endl;
+        }
+    }
+}
+
+int findLongestConseqSubseq(int arr[], int N)
+{
+    //Your code here
+    set<int> s;
+    for(int i=0;i<N;i++){
+        s.insert(arr[i]);
+    }
+    int ans=INT_MIN;
+    for(int i=0;i<N;i++){
+        int temp=arr[i]-1;
+        if(s.find(temp)!=s.end()){
+            continue;
+        }else{
+            int count = 1;
+            int t = arr[i]+1;
+            while(s.find(t)!=s.end()){
+                count++;
+                t++;
+            }
+            ans = max(ans,count);
+        }
+    }
+    return ans;
+    return 0;
+}
+
+long long maxProduct(int *arr, int n)
+{
+    long long maxProduct = arr[0];
+    long long minProduct = arr[0];
+    long long ans = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        long long choice1 = arr[i];
+        long long choice2 = maxProduct * arr[i];
+        long long choice3 = minProduct * arr[i];
+        maxProduct = max(choice1, max(choice2, choice3));
+        minProduct = min(choice1, min(choice2, choice3));
+        ans = max(ans, maxProduct);
+    }
+    return ans;
+}
+
 bool subArrayExists(int a[], int n)
 {
     //Your code here
@@ -76,6 +154,54 @@ bool subArrayExists(int a[], int n)
         }
     }
     return found;
+}
+void rearrangeArray(int a[], int n)
+{
+    int i = 0, j = n - 1;
+    //arranging all positive one side and all negative other side.
+    while (i <= j)
+    {
+        if ((a[i] < 0) && (a[j] > 0))
+        {
+            swap(a[i], a[j]);
+            i++;
+            j--;
+        }
+        else if (a[i] > 0)
+        {
+            i++;
+        }
+        else if (a[j] < 0)
+        {
+            j--;
+        }
+    }
+    //i==0 then all -ve no.
+    //i==n then all is +ve no.
+    if ((i == 0) || (i == n))
+    {
+        //print
+        for (int i = 0; i < n; i++)
+        {
+            cout << a[i] << " ";
+        }
+    }
+    else
+    {
+        //we need to swap
+        int k = 0;
+        while ((k < n) && (i < n))
+        {
+            swap(a[k], a[i]);
+            k += 2;
+            i++;
+        }
+        //print
+        for (int i = 0; i < n; i++)
+        {
+            cout << a[i] << " ";
+        }
+    }
 }
 vector<int> commonElements(int A[], int B[], int C[], int n1, int n2, int n3)
 {
