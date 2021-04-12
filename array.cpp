@@ -63,20 +63,186 @@ int moreThanNdK(int a[], int n, int k);
 
 string isSubset(int a1[], int a2[], int n, int m);
 
+bool find3Numbers(int A[], int n, int X);
+
+int trappingWater(int arr[], int n);
+
+long long findMinDiff(vector<long long> a, long long n, long long m);
+
+int minSubArray_with_some_greater_than_x(int arr[], int n, int x);
+
+void threeWayPartition(vector<int> &array, int a, int b);
+
+int find_median(vector<int> v);
+
 int main()
 {
-    int a1[] = {11, 1, 13, 21, 3, 7},
-        a2[] = {11, 3, 7, 1};
-    cout << isSubset(a1, a2,6,4);
+    vector<int> v = {1, 2, 3, 3, 4};
+    threeWayPartition(v, 1, 2);
+    for (auto i : v)
+    {
+        cout << i << " ";
+    }
     return 0;
 }
-string isSubset(int a1[], int a2[], int n, int m) {
-    set<int> s;
-    for(int i=0;i<n;i++){s.insert(a1[i]);}
-    int size = s.size();
-    for(int i=0;i<m;i++){s.insert(a2[i]);}
-    return s.size()==size ?  "Yes" :  "No" ;
+
+int find_median(vector<int> v)
+{
+    // Code here.
+    sort(v.begin(), v.end());
+    int size = v.size();
+    if (size & 1)
+    {
+        return v[size / 2];
+    }
+    else
+    {
+        return (v[size / 2] + v[(size / 2) - 1]) / 2;
+    }
 }
+
+void threeWayPartition(vector<int> &array, int a, int b)
+{
+    // code here
+    int n = array.size();
+    int j = 0, k = n - 1;
+    for (int i = 0; i <= k; i++)
+    {
+        if (array[i] < a)
+        {
+            swap(array[i], array[j]);
+            j++;
+            i++;
+        }
+        else if (array[i] > b)
+        {
+            arr[k]
+        }
+    }
+}
+int minSubArray_with_some_greater_than_x(int arr[], int n, int x)
+{
+    int current_sum = 0, min_length = n + 1;
+    int start = 0, end = 0;
+    while (end < n)
+    {
+        //keep adding while sum is smaller than x
+        while (current_sum <= x && end < n)
+        {
+            current_sum += arr[end++];
+        }
+        //if current sum increases.
+        while (current_sum > x && start < n)
+        {
+            //update min length.
+            if ((end - start) < min_length)
+            {
+                min_length = end - start;
+            }
+            //remove starting element.
+            current_sum -= arr[start++];
+        }
+    }
+    return min_length;
+}
+
+long long findMinDiff(vector<long long> a, long long n, long long m)
+{
+
+    long long ans = INT_MAX;
+    sort(a.begin(), a.end());
+    for (int i = 0; i + m - 1 < n; i++)
+    {
+        int d = a[i + m - 1] - a[i];
+        if (d < ans)
+        {
+            ans = d;
+        }
+    }
+    return ans;
+}
+
+int trappingWater(int arr[], int n)
+{
+    // Code here
+    int left_max[n], right_max[n];
+    //filling left max for each index.
+    left_max[0] = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] > left_max[i - 1])
+        {
+            left_max[i] = arr[i];
+        }
+        else
+        {
+            left_max[i] = left_max[i - 1];
+        }
+    }
+    //filling right max for each index.
+    right_max[n - 1] = arr[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+    {
+        if (arr[i] > right_max[i + 1])
+        {
+            right_max[i] = arr[i];
+        }
+        else
+        {
+            right_max[i] = right_max[i + 1];
+        }
+    }
+    //Now we can take min(left_max[i],right_max[i])-arr[i]. By this we can get storage of every index.
+    int ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+        ans += min(left_max[i], right_max[i]) - arr[i];
+    }
+    return ans;
+}
+
+bool find3Numbers(int A[], int n, int X)
+{
+    //Your Code Here
+    sort(A, A + n);
+    for (int i = 0; i < n - 2; i++)
+    {
+        int l = i + 1;
+        int r = n - 1;
+        while (l < r)
+        {
+            if (A[i] + A[l] + A[r] == X)
+            {
+                return 1;
+            }
+            else if (A[i] + A[l] + A[r] < X)
+            {
+                l++;
+            }
+            else
+            {
+                r--;
+            }
+        }
+    }
+    return false;
+}
+
+string isSubset(int a1[], int a2[], int n, int m)
+{
+    set<int> s;
+    for (int i = 0; i < n; i++)
+    {
+        s.insert(a1[i]);
+    }
+    int size = s.size();
+    for (int i = 0; i < m; i++)
+    {
+        s.insert(a2[i]);
+    }
+    return s.size() == size ? "Yes" : "No";
+}
+
 int moreThanNdK(int a[], int n, int k)
 {
     map<int, int> m;
@@ -98,22 +264,28 @@ int findLongestConseqSubseq(int arr[], int N)
 {
     //Your code here
     set<int> s;
-    for(int i=0;i<N;i++){
+    for (int i = 0; i < N; i++)
+    {
         s.insert(arr[i]);
     }
-    int ans=INT_MIN;
-    for(int i=0;i<N;i++){
-        int temp=arr[i]-1;
-        if(s.find(temp)!=s.end()){
+    int ans = INT_MIN;
+    for (int i = 0; i < N; i++)
+    {
+        int temp = arr[i] - 1;
+        if (s.find(temp) != s.end())
+        {
             continue;
-        }else{
+        }
+        else
+        {
             int count = 1;
-            int t = arr[i]+1;
-            while(s.find(t)!=s.end()){
+            int t = arr[i] + 1;
+            while (s.find(t) != s.end())
+            {
                 count++;
                 t++;
             }
-            ans = max(ans,count);
+            ans = max(ans, count);
         }
     }
     return ans;
