@@ -1,50 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long int;
+using ll = long long;
+int mat[1000][1000];
+void matSolve()
+{
+    int count = 1;
+    int count2 = 0;
+    for (int i = 0; i <  1000; i++)
+    {
+        mat[i][0] = i + count;
+        for (int j = 1; j < 1000; j++)
+        {
+            mat[i][j] = mat[i][j - 1] + j + count2;
+        }
+        count += i + 1;
+        count2++;
+    }
+}
 int main()
 {
-    int n;
-    cin >> n;
-    ll p[n];
-    for (int i = 0; i < n; i++)
+    matSolve();
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin >> p[i];
-    }
-    int q;
-    cin >> q;
-    while (q--)
-    {
-        ll x, k;
-        cin >> x >> k;
-        int startIndex = x - 1;
-        int count = 0;
-        if (p[startIndex] <= k)
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        x1--, y1--, x2--, y2--;
+        int ans = 0;
+        for (int i = x1; i <= x2; i++)
         {
-            k -= p[startIndex];
-            p[startIndex] = 0;
+            ans += mat[i][y1];
         }
-        else
+        for (int i = y1+1; i <= y2; i++)
         {
-            p[startIndex] -= k;
-            k = 0;
+            ans += mat[x2][i];
         }
-        int temp_K = k;
-        startIndex++;
-        while (startIndex < n && k > 0)
-        {
-            if (p[startIndex] <= k)
-            {
-                k -= p[startIndex];
-                p[startIndex] = 0;
-            }
-            else
-            {
-                p[startIndex] -= k;
-                k = 0;
-            }
-            count++;
-            startIndex++;
-        }
-        cout << (temp_K - k) * count << endl;
+        cout << ans << endl;
     }
 }

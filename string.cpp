@@ -12,13 +12,18 @@ bool shuffleCheck(string first, string second, string result);
 
 string countAndSay(int n);
 
+string longestPalindrome (string s);
+
+void print_subsequence(string input,string output);
+
 int maxSubStr(string str, int n);
 
 string printSequence(string input);
 
 int main()
-{
-    cout<<printSequence("GEEKSFORGEEKS")<<endl;
+{  
+    int a[]={1,2,3,4,5};
+    cout<<binary_search(a,a+5,4);
 }
 
 string printSequence(string input)
@@ -26,25 +31,22 @@ string printSequence(string input)
     //print mobile keypad sequence
     //Input : XYZ
     //Output : 999999999
-    string keypadAlpha_to_num[]={"2","22","222"
-                                ,"3","33","333"
-                                ,"4","44","444"
-                                ,"5","55","555"
-                                ,"6","66","666"
-                                ,"7","77","777","7777"
-                                ,"8","88","888"
-                                ,"9","99","999","9999"};
+    string keypadAlpha_to_num[] = {"2", "22", "222", "3", "33", "333", "4", "44", "444", "5", "55", "555", "6", "66", "666", "7", "77", "777", "7777", "8", "88", "888", "9", "99", "999", "9999"};
     string output = "";
-    for(int i=0;i<input.length();i++){
-        if(input[i]==' '){
+    for (int i = 0; i < input.length(); i++)
+    {
+        if (input[i] == ' ')
+        {
             output += "0";
-        }else{
+        }
+        else
+        {
             //logic to calculate the index
-            int position = input[i]-'A';
+            int position = input[i] - 'A';
             output += keypadAlpha_to_num[position];
         }
-    }               
-    return output;             
+    }
+    return output;
 }
 
 int maxSubStr(string str, int n)
@@ -66,6 +68,75 @@ int maxSubStr(string str, int n)
     return ans;
 }
 
+void print_subsequence(string input,string output)
+{
+    //base case
+    if(input.length()==0){
+            cout<<output<<endl;
+        return;
+    }
+
+    //recursive case
+    //input.substr(1) this means we remove we start the string from from 1index.
+    print_subsequence(input.substr(1),output);
+    print_subsequence(input.substr(1),output+input[0]);
+}
+
+string longestPalindrome (string s){
+
+    int n = s.length();
+
+    //create n*n table to store the check of palindrome.
+    bool table[n][n];
+
+    //initialise with 0.
+    memset(table,0,sizeof(table));
+
+    int maxLength = 1;
+
+    //now initialise diagonal and and its next element because it will help in covering whole matrix.
+
+    //with this we will calculate 1,2 size palindrome.
+    for(int i=0;i<n;i++){
+        table[i][i] = true;
+    }
+    int start = 0;
+    for(int i=0;i<n-1;i++){
+        if(s[i]==s[i+1]){
+            table[i][i+1] = true;
+            start = i;
+            maxLength = 2;
+        }
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<table[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    //now for 3 size palindrome.
+    //k is length of substring.
+    for(int k = 3;k<=n;k++){
+        for(int i=0;i<n-k+1;i++){
+            int j = i+k-1;
+            if(table[i+1][j-1] && s[i]==s[j]){
+                table[i][j]=true;
+                if(k>maxLength){
+                    start = i;
+                    maxLength = k;
+                }
+            }
+        }
+    }
+    int low = start; 
+    int high = start + maxLength - 1;
+    string output;
+    for(int i=low;i<=high;i++){
+        output+=s[i];
+    }
+    return output;
+}
+
 string countAndSay(int n)
 {
     /*
@@ -79,26 +150,30 @@ string countAndSay(int n)
     */
 
     //n is 0 then return
-    if(n<=0){
+    if (n <= 0)
+    {
         return "";
-    }   
+    }
     string res = "1";
-    while(n>1){
-        string temp="";
-        for(int i=0;i<res.length();i++){
-            int count=1;
-            while(i+1<res.length() && res[i]==res[i+1]){
+    while (n > 1)
+    {
+        string temp = "";
+        for (int i = 0; i < res.length(); i++)
+        {
+            int count = 1;
+            while (i + 1 < res.length() && res[i] == res[i + 1])
+            {
                 count++;
                 i++;
             }
             char t = '0' + count;
-            temp+=t;
-            temp+=res[i];
+            temp += t;
+            temp += res[i];
         }
         res = temp;
         n--;
-    } 
-    return res;  
+    }
+    return res;
 }
 
 bool shuffleCheck(string first, string second, string result)
@@ -107,34 +182,41 @@ bool shuffleCheck(string first, string second, string result)
     //String second = "12";
     //String[] results = {"1XY2", "Y12X"}; loop to check for the element.
     //1XY2 is a valid shuffle of XY and 12
-    //Y12X is not a valid shuffle of XY and 
-    int l1=first.length(),l2=second.length(),lr=result.length();
+    //Y12X is not a valid shuffle of XY and
+    int l1 = first.length(), l2 = second.length(), lr = result.length();
     //length of two string does not matches result return false.
-    if((l1+l2)!=lr){
+    if ((l1 + l2) != lr)
+    {
         return false;
     }
-    int i=0,j=0,k=0;
-    while(k!=lr){
+    int i = 0, j = 0, k = 0;
+    while (k != lr)
+    {
         //check char of result matches with first char of first string
-        if(i<l1 && first[i]==result[k]){
+        if (i < l1 && first[i] == result[k])
+        {
             i++;
         }
         //check char of result matches with first char of second string
-        else if(j<l2 && second[j]==result[k]){
+        else if (j < l2 && second[j] == result[k])
+        {
             j++;
         }
         //else char does not matches.
-        else{
+        else
+        {
             return false;
         }
         k++;
     }
     //if some char left in first and second string.
-        if(i<l1 || j<l2){
-            return false;
-        }
-        return true;
+    if (i < l1 || j < l2)
+    {
+        return false;
+    }
+    return true;
 }
+
 bool areRotations(string str1, string str2)
 {
     //check length of both strings are equal or not
