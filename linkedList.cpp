@@ -44,12 +44,192 @@ void circularInsertAtTail(Node *head, int v);
 void circularInsertAtHead(Node *head, int v);
 void circularDeletion(Node *head, int pos);
 void deleteAtHead(Node *head);
+Node *sort_0_1_2(Node *head);
+Node *mergeK_SortedLists(Node *arr[], int K);
+Node *mergeK(Node *first, Node *second);
+long long multiplyTwoLists(Node *l1, Node *l2);
+Node *delete_node_greater_value_at_right(Node *head);
+Node *divide(int N, Node *head);
+int get_nth_node_from_end(Node *head,int n);
 int main()
 {
-
+    Node n1(12);
+    Node n2(15);
+    Node n3(10);
+    Node n4(11);
+    Node n5(5);
+    Node n6(6);
+    n1.next = &n2;
+    n2.next = &n3;
+    n3.next = &n4;
+    n4.next = &n5;
+    n5.next = &n6;
+    Node *head = &n1;
+    Node *ans = delete_node_greater_value_at_right(head);
+    print(ans);
     return 0;
 }
-
+int get_nth_node_from_end(Node *head,int n)
+{
+    Node *node1 = head, *node2 = head;
+    int count = 1;
+    while(node1!=NULL){
+        if(count==n+1){
+            break;
+        }
+        count++;
+        node1 = node1->next;
+    }
+    if(count==n+1){
+        while(node1!=NULL){
+            node1=node1->next;
+            node2=node2->next;
+        }
+        return node2->data;
+    }
+    return -1;
+}
+Node *divide(int N, Node *head)
+{
+    Node *even = NULL;
+    Node *odd = NULL;
+    Node *e = even;
+    Node *o = odd;
+    while(head){
+        if(head->data%2==0){
+            if(even==NULL){
+                even = head;
+                e = head;
+            }else{
+                e->next = head;
+                e = e->next;
+            }
+        }else{
+            if(odd==NULL){
+                odd = head;
+                o = head;
+            }else{
+                o->next = head;
+                o = o->next;
+            }
+        }
+        head = head->next;
+    }
+    if(e) e->next = o;
+    if(o) o->next = NULL;
+    if(even) return even;
+    return odd; 
+}
+Node *delete_node_greater_value_at_right(Node *head)
+{
+    // your code goes here
+    head = reverse(head);
+    Node *cur = head;
+    int ma = head->data;
+    Node *prev = head;
+    head = head->next;
+    while (head)
+    {
+        if (head->data >= ma)
+        {
+            ma = head->data;
+            prev = head;
+            head = head->next;
+        }
+        else
+        {
+            prev->next = head->next;
+            head = prev->next;
+        }
+    }
+    head = reverse(cur);
+    return head;
+}
+long long multiplyTwoLists(Node *l1, Node *l2)
+{
+    //Your code here
+    long long int mod = 1000000007;
+    int a = 0, b = 0;
+    while (l1)
+    {
+        a = ((a % mod) * (10 % mod) % mod + l1->data % mod) % mod;
+        l1 = l1->next;
+    }
+    while (l2)
+    {
+        b = ((b % mod) * (10 % mod) % mod + l2->data % mod) % mod;
+        l2 = l2->next;
+    }
+    return (a % mod * b % mod) % mod;
+}
+Node *mergeK(Node *first, Node *second)
+{
+    if (!first)
+        return second;
+    if (!second)
+        return first;
+    Node *result = NULL;
+    if (first->data < second->data)
+    {
+        result = first;
+        result->next = mergeK(first->next, second);
+    }
+    else
+    {
+        result = second;
+        result->next = mergeK(first, second->next);
+    }
+    return result;
+}
+Node *mergeK_SortedLists(Node *arr[], int K)
+{
+    int i = 0;
+    int last = K - 1;
+    int j;
+    while (last != 0)
+    {
+        i = 0;
+        j = last;
+        while (i < j)
+        {
+            arr[i] = mergeK(arr[i], arr[j]);
+            i++;
+            j--;
+            if (i >= j)
+            {
+                last = j;
+            }
+        }
+    }
+    return arr[0];
+}
+Node *sort_0_1_2(Node *head)
+{
+    // Add code here
+    int count[3] = {0, 0, 0};
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        count[temp->data]++;
+        temp = temp->next;
+    }
+    temp = head;
+    int i = 0;
+    while (temp != NULL)
+    {
+        if (count[i] > 0)
+        {
+            temp->data = i;
+            temp = temp->next;
+            count[i]--;
+        }
+        else
+        {
+            i++;
+        }
+    }
+    return head;
+}
 void deleteAtHead(Node *head)
 {
     Node *temp = head;
